@@ -1,0 +1,10 @@
+# ninja log v5
+1	3	0	clean	a31eedcededa8236
+2	13	1741164785164261163	CMakeFiles/HttpServer.dir/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.o	a57a96b632ddc15d
+2	658	1741164785807292490	CMakeFiles/HttpServer.dir/main.cpp.o	48f4512ccf05a318
+1	794	1741164785944299165	CMakeFiles/HttpServer.dir/HttpServer.cpp.o	293aa85efeb9e7e1
+0	2	0	clean	a31eedcededa8236
+1	11	1741164878644250095	CMakeFiles/HttpServer.dir/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.o	a57a96b632ddc15d
+1	635	1741164879268216343	CMakeFiles/HttpServer.dir/main.cpp.o	48f4512ccf05a318
+1	770	1741164879403209054	CMakeFiles/HttpServer.dir/HttpServer.cpp.o	293aa85efeb9e7e1
+770	825	1741164879457206139	/home/cmzcc/c++projects/cc_WebServer/bin/HttpServer	ecdb87a9404b9e24
