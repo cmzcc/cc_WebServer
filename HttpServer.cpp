@@ -1,4 +1,3 @@
-// HttpServer.cpp
 #include "HttpServer.h"
 #include "HttpRequest.h"
 #include "HttpRequestParser.h"
@@ -9,7 +8,7 @@ HttpServer::HttpServer(EventLoop *loop,
                        const std::string &name)
     : server_(loop, listenAddr, name)
 {
-
+    
     // 设置默认的请求处理函数，使用路由器处理请求
     requestHandler_ = [this](const HttpRequest &req, HttpResponse *resp)
     {
@@ -25,6 +24,7 @@ HttpServer::HttpServer(EventLoop *loop,
         std::bind(&HttpServer::onMessage, this, std::placeholders::_1,
                   std::placeholders::_2, std::placeholders::_3));
 }
+
 void HttpServer::onConnection(const TcpConnectionPtr &conn)
 {
     if (conn->connected())
@@ -56,16 +56,21 @@ void HttpServer::onMessage(const TcpConnectionPtr &conn, Buffer *buf, Timestamp 
         const HttpRequest &request = parser.request();
         HttpResponse response;
 
+        std::cout << "Parsed request: " << std::endl;
+        std::cout << "Method: " << request.method() << std::endl;
+        std::cout << "Path: " << request.path() << std::endl;
+
+        // 调用请求处理函数
         if (getRequestHandler())
         {
-            HttpRequest req;
-            HttpResponse resp;
-            getRequestHandler()(req, &resp);
+            // 调用注册的请求处理器
+            std::cout << "Calling request handler..." << std::endl;
+            getRequestHandler()(request, &response);
         }
-
         else
         {
             // 没有设置处理函数，返回404
+            std::cout << "No request handler set, returning 404" << std::endl;
             response.setStatusCode(HttpResponse::k404NotFound);
             response.setContentType("text/plain");
             response.setBody("404 Not Found");
@@ -73,6 +78,7 @@ void HttpServer::onMessage(const TcpConnectionPtr &conn, Buffer *buf, Timestamp 
 
         // 发送响应
         std::string responseStr = response.toString();
+        std::cout << "Sending response: " << responseStr << std::endl;
         conn->send(responseStr);
 
         // 清空已处理的数据
@@ -90,6 +96,7 @@ void HttpServer::onMessage(const TcpConnectionPtr &conn, Buffer *buf, Timestamp 
         response.setBody("400 Bad Request");
 
         std::string responseStr = response.toString();
+        std::cout << "Bad request, sending 400 response." << std::endl;
         conn->send(responseStr);
 
         // 清空缓冲区

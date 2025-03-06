@@ -28,7 +28,11 @@ public:
     void setVersion(const std::string &version) { version_ = version; }
     const std::string &version() const { return version_; }
 
-    void setBody(const std::string &body) { body_ = body; }
+    void setBody(const std::string &body)
+    { 
+        body_ = body;
+        std::cout << "Response body: " << body << std::endl;
+    }
     const std::string &body() const { return body_; }
 
     void addHeader(const std::string &key, const std::string &value)
