@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/home/cmzcc/c++projects/cc_WebServer/build",
+  "command": "/usr/bin/g++ -I/usr/include/cc_muduo -g -std=c++17 -g -o CMakeFiles/HttpServer.dir/HttpServer.cpp.o -c /home/cmzcc/c++projects/cc_WebServer/HttpServer.cpp",
+  "file": "/home/cmzcc/c++projects/cc_WebServer/HttpServer.cpp",
+  "output": "CMakeFiles/HttpServer.dir/HttpServer.cpp.o"
+},
+{
+  "directory": "/home/cmzcc/c++projects/cc_WebServer/build",
+  "command": "/usr/bin/g++ -I/usr/include/cc_muduo -g -std=c++17 -g -o CMakeFiles/HttpServer.dir/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.o -c /home/cmzcc/c++projects/cc_WebServer/build/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.cpp",
+  "file": "/home/cmzcc/c++projects/cc_WebServer/build/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.cpp",
+  "output": "CMakeFiles/HttpServer.dir/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.cpp.o"
+},
+{
+  "directory": "/home/cmzcc/c++projects/cc_WebServer/build",
+  "command": "/usr/bin/g++ -I/usr/include/cc_muduo -g -std=c++17 -g -o CMakeFiles/HttpServer.dir/main.cpp.o -c /home/cmzcc/c++projects/cc_WebServer/main.cpp",
+  "file": "/home/cmzcc/c++projects/cc_WebServer/main.cpp",
+  "output": "CMakeFiles/HttpServer.dir/main.cpp.o"
+}
+]
